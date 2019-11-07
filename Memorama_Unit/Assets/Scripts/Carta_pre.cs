@@ -10,7 +10,12 @@ public class Carta_pre : MonoBehaviour
 
     public static int tarjetas_volteadas;
 
+    Animator anim;
 
+    void Start()
+    {
+        anim = this.GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,17 +26,49 @@ public class Carta_pre : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name == transform.name /*&& tarjetas_volteadas>=2*/)
+                if (hit.transform.name == transform.name && tarjetas_volteadas<=2)
                 {
                     tarjetas_volteadas = tarjetas_volteadas + 1;
 
-                    this.gameObject.GetComponent<Animator>().Play("cartar_voltear");
-                    this.gameObject.GetComponent<Animator>().StopPlayback();
+                    var card = hit.collider.GetComponent<Carta_pre>();
+                    if (card != null)
+                    {
+                        //we hit a card!
+                        card.PlayFlip();
+                    }
+
 
 
                 }
             }
         }
 
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            //we should only do the physics test if the mouse is down...
+            //why do an expensive raycast if it doesn't matter?
+
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                var card = hit.collider.GetComponent<Carta_pre>();
+                if (card != null)
+                {
+                    //we hit a card!
+                    card.PlayFlip();
+                }
+            }
+        }
     }
+
+    public void PlayFlip()
+    {
+        anim.gameObject.GetComponent<Animator>().Play("cartar_voltear");
+        anim.gameObject.GetComponent<Animator>().StopPlayback();
+    }
+
 }
+
