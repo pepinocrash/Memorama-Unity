@@ -10,11 +10,16 @@ public class Carta_pre : MonoBehaviour
 
     public static int tarjetas_volteadas;
 
+    GameObject go;
+    Comparacion comp;
+
     Animator anim;
 
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        go = GameObject.Find("Manager");
+        comp = (Comparacion)go.GetComponent(typeof(Comparacion));
     }
 
     // Update is called once per frame
@@ -34,7 +39,10 @@ public class Carta_pre : MonoBehaviour
                     if (card != null)
                     {
                         //we hit a card!
+
+                        card.comp.SumaClick(0);
                         card.PlayFlip();
+                        
                     }
 
 
@@ -45,6 +53,36 @@ public class Carta_pre : MonoBehaviour
 
 
 
+       /* if (Input.GetMouseButtonDown(0))
+        {
+            //we should only do the physics test if the mouse is down...
+            //why do an expensive raycast if it doesn't matter?
+
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                var card = hit.collider.GetComponent<Carta_pre>();
+                if (card != null)
+                {
+                    //we hit a card!
+                    card.comp.SumaClick(0);
+                    card.PlayFlip();
+
+                    
+                }
+            }
+        }*/
+    }
+
+    public void PlayFlip()
+    {
+        anim.gameObject.GetComponent<Animator>().Play("cartar_voltear");
+        anim.gameObject.GetComponent<Animator>().StopPlayback();
+    }
+
+    void OnMouseDown()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             //we should only do the physics test if the mouse is down...
@@ -58,16 +96,18 @@ public class Carta_pre : MonoBehaviour
                 if (card != null)
                 {
                     //we hit a card!
-                    card.PlayFlip();
+                    int click = card.comp.SumaClick(0);
+                    if (click <= 2)
+                    {
+                        card.PlayFlip();
+
+                    }
+
+
                 }
             }
         }
-    }
 
-    public void PlayFlip()
-    {
-        anim.gameObject.GetComponent<Animator>().Play("cartar_voltear");
-        anim.gameObject.GetComponent<Animator>().StopPlayback();
     }
 
 }

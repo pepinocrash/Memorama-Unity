@@ -19,17 +19,17 @@ public class Comparacion : MonoBehaviour
         
     }
 
-    public int SumaClick()
+    public int SumaClick(int carta)
     {
-        if (clicks < 1)
+        if (clicks < 3)
         {
             clicks++;
             return clicks;
         }
         else
         {
-            //voltear tarjeta
-            return clicks;
+            return 3;
         }
+
     }
 }
