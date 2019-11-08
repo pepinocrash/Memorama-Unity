@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Comparacion : MonoBehaviour
 {
-    public GameObject[] cartas;
+    public GameObject cartas01;
+    public GameObject cartas02;
+    public Texture text01;
+    public Texture text02;
     public int clicks = 0;
   
     // Start is called before the first frame update
@@ -31,5 +34,33 @@ public class Comparacion : MonoBehaviour
             return 3;
         }
 
+    }
+
+    public bool CompararIguales()
+    {
+       text01 =  cartas01.GetComponent<Renderer>().material.mainTexture;
+        text02= cartas02.GetComponent<Renderer>().material.mainTexture;
+        Debug.Log(text01 + "\n"+ text02);
+        if (text01 == text02)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+
+    public void setCarta(GameObject carta)
+    {
+        if (clicks == 1)
+        {
+            cartas01 = carta;
+        }
+        else
+        {
+            cartas02 = carta;
+        }
     }
 }

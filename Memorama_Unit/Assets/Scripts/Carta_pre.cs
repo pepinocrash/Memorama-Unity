@@ -100,7 +100,24 @@ public class Carta_pre : MonoBehaviour
                     if (click <= 2)
                     {
                         card.PlayFlip();
+                        card.comp.setCarta(gameObject);
 
+
+
+                    }
+                    if (click==2)
+                    {
+                       bool equals = card.comp.CompararIguales();
+                        if (equals)
+                        {
+                            Destroy(gameObject);
+                        }
+                        else
+                        {
+                            //animacion de volteo
+                            card.comp.clicks = 0;
+
+                        }
                     }
 
 
