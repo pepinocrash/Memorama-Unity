@@ -47,6 +47,11 @@ public class Comparacion : MonoBehaviour
         }
         else
         {
+
+            StartCoroutine(ExecuteAfterTime(2));
+          
+
+
             return false;
         }
         
@@ -63,4 +68,15 @@ public class Comparacion : MonoBehaviour
             cartas02 = carta;
         }
     }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        cartas01.GetComponent<Carta_pre>().PlayFlip_Reverse();
+        cartas02.GetComponent<Carta_pre>().PlayFlip_Reverse();
+        // Code to execute after the delay
+
+    }
+
 }

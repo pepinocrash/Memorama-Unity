@@ -13,7 +13,7 @@ public class Carta_pre : MonoBehaviour
     GameObject go;
     Comparacion comp;
 
-    Animator anim;
+    public Animator anim;
 
     void Start()
     {
@@ -77,8 +77,22 @@ public class Carta_pre : MonoBehaviour
 
     public void PlayFlip()
     {
+        anim.gameObject.GetComponent<Animator>().Rebind();
+        anim.SetFloat("carta_voltear", 1);
         anim.gameObject.GetComponent<Animator>().Play("cartar_voltear");
         anim.gameObject.GetComponent<Animator>().StopPlayback();
+        
+
+    }
+
+    public void PlayFlip_Reverse()
+    {
+        //anim.gameObject.GetComponent<Animator>().Rebind();
+        anim.SetFloat("carta_voltear", -1);
+        anim.gameObject.GetComponent<Animator>().Play("cartar_voltear");
+        anim.gameObject.GetComponent<Animator>().StopPlayback();
+       
+
     }
 
     void OnMouseDown()
@@ -119,8 +133,8 @@ public class Carta_pre : MonoBehaviour
                         {
                             //animacion de volteo
                             card.comp.clicks = 0;
-                            card.comp.cartas01 = null;
-                            card.comp.cartas02 = null;
+                            StartCoroutine(ExecuteAfterTime(2));
+
 
                         }
                     }
@@ -131,6 +145,19 @@ public class Carta_pre : MonoBehaviour
         }
 
     }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        comp.cartas01 = null;
+        comp.cartas02 = null;
+        // Code to execute after the delay
+
+    }
+
+
+
 
 }
 
