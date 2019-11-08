@@ -110,12 +110,17 @@ public class Carta_pre : MonoBehaviour
                        bool equals = card.comp.CompararIguales();
                         if (equals)
                         {
-                            Destroy(gameObject);
+                            //animacion destruccion
+                            Destroy(card.comp.cartas01);
+                            Destroy(card.comp.cartas02);
+                            card.comp.clicks = 0;
                         }
                         else
                         {
                             //animacion de volteo
                             card.comp.clicks = 0;
+                            card.comp.cartas01 = null;
+                            card.comp.cartas02 = null;
 
                         }
                     }
