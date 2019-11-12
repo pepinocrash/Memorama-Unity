@@ -575,10 +575,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartas:
-  - {fileID: 2800000, guid: 7e739b062b01d6a48b7a672616298d2b, type: 3}
-  - {fileID: 2800000, guid: 7e739b062b01d6a48b7a672616298d2b, type: 3}
-  - {fileID: 2800000, guid: 7e739b062b01d6a48b7a672616298d2b, type: 3}
-  - {fileID: 2800000, guid: 7e739b062b01d6a48b7a672616298d2b, type: 3}
+  - {fileID: 2800000, guid: 66b3aa267874fd346a7c5bb8f74f49c3, type: 3}
+  - {fileID: 2800000, guid: 815db98fcab73a643b299dfbe8eb1ca9, type: 3}
+  - {fileID: 2800000, guid: 66b3aa267874fd346a7c5bb8f74f49c3, type: 3}
+  - {fileID: 2800000, guid: 66b3aa267874fd346a7c5bb8f74f49c3, type: 3}
   carta_scene: []
 --- !u!114 &985036858
 MonoBehaviour:
