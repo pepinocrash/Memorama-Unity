@@ -88,10 +88,13 @@ public class Carta_pre : MonoBehaviour
     public void PlayFlip_Reverse()
     {
         //anim.gameObject.GetComponent<Animator>().Rebind();
-        anim.SetFloat("carta_voltear", -1);
-        anim.gameObject.GetComponent<Animator>().Play("cartar_voltear");
-        anim.gameObject.GetComponent<Animator>().StopPlayback();
-       
+        comp.cartas01.gameObject.GetComponent<Animator>().SetFloat("carta_voltear", -1);
+        comp.cartas02.gameObject.GetComponent<Animator>().SetFloat("carta_voltear", -1);
+        comp.cartas01.gameObject.GetComponent<Animator>().Play("cartar_voltear");
+        comp.cartas01.gameObject.GetComponent<Animator>().StopPlayback();
+        comp.cartas02.gameObject.GetComponent<Animator>().Play("cartar_voltear");
+        comp.cartas02.gameObject.GetComponent<Animator>().StopPlayback();
+
 
     }
 

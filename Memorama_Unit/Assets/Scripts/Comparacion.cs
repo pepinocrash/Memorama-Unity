@@ -38,9 +38,10 @@ public class Comparacion : MonoBehaviour
 
     public bool CompararIguales()
     {
-       text01 =  cartas01.GetComponent<Renderer>().material.mainTexture;
+        text01 =  cartas01.GetComponent<Renderer>().material.mainTexture;
         text02= cartas02.GetComponent<Renderer>().material.mainTexture;
         Debug.Log(text01 + "\n"+ text02);
+
         if (text01 == text02)
         {
             return true;
@@ -71,10 +72,11 @@ public class Comparacion : MonoBehaviour
 
     IEnumerator ExecuteAfterTime(float time)
     {
-        yield return new WaitForSeconds(time);
 
+        yield return new WaitForSeconds(time);
         cartas01.GetComponent<Carta_pre>().PlayFlip_Reverse();
-        cartas02.GetComponent<Carta_pre>().PlayFlip_Reverse();
+       
+
         // Code to execute after the delay
 
     }
