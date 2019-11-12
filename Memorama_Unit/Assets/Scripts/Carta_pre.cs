@@ -128,9 +128,8 @@ public class Carta_pre : MonoBehaviour
                         if (equals)
                         {
                             //animacion destruccion
-                            Destroy(card.comp.cartas01);
-                            Destroy(card.comp.cartas02);
                             card.comp.clicks = 0;
+                            StartCoroutine(DestroyAfterTime(2));
                         }
                         else
                         {
@@ -159,6 +158,14 @@ public class Carta_pre : MonoBehaviour
 
     }
 
+    IEnumerator DestroyAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(comp.cartas01);
+        Destroy(comp.cartas02);
+    
+
+    }
 
 
 
