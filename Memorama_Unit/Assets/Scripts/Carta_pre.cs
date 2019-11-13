@@ -6,12 +6,14 @@ public class Carta_pre : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public bool tarjeta_vol = false;
+    public static bool Seleccionadas = false;
 
     public static int tarjetas_volteadas;
 
     GameObject go;
     Comparacion comp;
+
+    GameObject particula;
 
     public Animator anim;
 
@@ -19,6 +21,7 @@ public class Carta_pre : MonoBehaviour
     {
         anim = this.GetComponent<Animator>();
         go = GameObject.Find("Manager");
+        particula = GameObject.Find("Particula");
         comp = (Comparacion)go.GetComponent(typeof(Comparacion));
     }
 
@@ -100,7 +103,7 @@ public class Carta_pre : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Seleccionadas==false)
         {
             //we should only do the physics test if the mouse is down...
             //why do an expensive raycast if it doesn't matter?
@@ -116,6 +119,7 @@ public class Carta_pre : MonoBehaviour
                     int click = card.comp.SumaClick(0);
                     if (click <= 2)
                     {
+                      
                         card.PlayFlip();
                         card.comp.setCarta(gameObject);
 
@@ -124,18 +128,28 @@ public class Carta_pre : MonoBehaviour
                     }
                     if (click==2)
                     {
-                       bool equals = card.comp.CompararIguales();
+                        Seleccionadas = true;
+                        bool equals = card.comp.CompararIguales();
+                       
                         if (equals)
                         {
+                           
                             //animacion destruccion
                             card.comp.clicks = 0;
+                            particula.GetComponent<Spawnear_Particula>().spawn_correcta();
                             StartCoroutine(DestroyAfterTime(2));
+                            StartCoroutine(activarbool(5));
+
+
+
                         }
                         else
                         {
                             //animacion de volteo
                             card.comp.clicks = 0;
                             StartCoroutine(ExecuteAfterTime(2));
+                            StartCoroutine(activarbool(5));
+
 
 
                         }
@@ -152,8 +166,12 @@ public class Carta_pre : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
+        particula.GetComponent<Spawnear_Particula>().spawn_incorrecta();
+
         comp.cartas01 = null;
         comp.cartas02 = null;
+        
+
         // Code to execute after the delay
 
     }
@@ -163,7 +181,20 @@ public class Carta_pre : MonoBehaviour
         yield return new WaitForSeconds(time);
         Destroy(comp.cartas01);
         Destroy(comp.cartas02);
-    
+        comp.cartas01 = null;
+        comp.cartas02 = null;
+
+        Seleccionadas = false;
+
+
+
+    }
+
+    IEnumerator activarbool(float time)
+    {
+        yield return new WaitForSeconds(time);
+       
+        Seleccionadas = false;
 
     }
 
