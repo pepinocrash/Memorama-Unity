@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] carta_scene;
 
-    int cantidad_maxima=4;
+    int cantidad_maxima=12;
 
     // Start is called before the first frame update
     void Start()
