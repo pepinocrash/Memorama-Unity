@@ -34,22 +34,56 @@ public class Carta_pre : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name == transform.name && tarjetas_volteadas<=2)
+                if (hit.transform.name == transform.name && tarjetas_volteadas <= 2)
                 {
                     tarjetas_volteadas = tarjetas_volteadas + 1;
 
                     var card = hit.collider.GetComponent<Carta_pre>();
                     if (card != null)
                     {
-                        //we hit a card!
+                        int click = card.comp.SumaClick(0);
+                        if (click <= 2)
+                        {
 
-                        card.comp.SumaClick(0);
-                        card.PlayFlip();
-                        
+                            card.PlayFlip();
+                            card.comp.setCarta(gameObject);
+
+
+
+                        }
+                        if (click == 2)
+                        {
+                            Seleccionadas = true;
+                            bool equals = card.comp.CompararIguales();
+
+                            if (equals)
+                            {
+
+                                //animacion destruccion
+                                card.comp.clicks = 0;
+                                particula.GetComponent<Spawnear_Particula>().spawn_correcta();
+                                StartCoroutine(DestroyAfterTime(2));
+                                StartCoroutine(activarbool(5));
+
+
+
+                            }
+                            else
+                            {
+                                //animacion de volteo
+                                card.comp.clicks = 0;
+                                StartCoroutine(ExecuteAfterTime(2));
+                                StartCoroutine(activarbool(5));
+
+
+
+                            }
+
+                        }
+
+
+
                     }
-
-
-
                 }
             }
         }
