@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 266877842}
   - component: {fileID: 266877841}
   - component: {fileID: 266877840}
+  - component: {fileID: 266877844}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -359,6 +360,71 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &266877844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266877839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2518301747d164e83cdebe5bce0e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cartas_01:
+  - {fileID: 2800000, guid: 815db98fcab73a643b299dfbe8eb1ca9, type: 3}
+  - {fileID: 2800000, guid: 815db98fcab73a643b299dfbe8eb1ca9, type: 3}
+  - {fileID: 2800000, guid: c6050ea3512ad6a49b1c4f7c027085a6, type: 3}
+  - {fileID: 2800000, guid: c6050ea3512ad6a49b1c4f7c027085a6, type: 3}
+  - {fileID: 2800000, guid: 66b3aa267874fd346a7c5bb8f74f49c3, type: 3}
+  - {fileID: 2800000, guid: 66b3aa267874fd346a7c5bb8f74f49c3, type: 3}
+  - {fileID: 2800000, guid: daefd21d98a23144d80f5de3a2623157, type: 3}
+  - {fileID: 2800000, guid: daefd21d98a23144d80f5de3a2623157, type: 3}
+  - {fileID: 2800000, guid: 89812c56cb663e040ba05e806f93fb15, type: 3}
+  - {fileID: 2800000, guid: 89812c56cb663e040ba05e806f93fb15, type: 3}
+  - {fileID: 2800000, guid: 0486696dbaf8059449cb9af0e3e5ddd7, type: 3}
+  - {fileID: 2800000, guid: 0486696dbaf8059449cb9af0e3e5ddd7, type: 3}
+  cartas_02:
+  - {fileID: 2800000, guid: 2d82c6c92b9c01448a47ab4c4a920d12, type: 3}
+  - {fileID: 2800000, guid: 2d82c6c92b9c01448a47ab4c4a920d12, type: 3}
+  - {fileID: 2800000, guid: 286019989c53ecc4bbbd4feeb5afd194, type: 3}
+  - {fileID: 2800000, guid: 286019989c53ecc4bbbd4feeb5afd194, type: 3}
+  - {fileID: 2800000, guid: bae3edae32b9977469f884e65425575c, type: 3}
+  - {fileID: 2800000, guid: bae3edae32b9977469f884e65425575c, type: 3}
+  - {fileID: 2800000, guid: f2f5174a41928a04e8d196f98ad01f89, type: 3}
+  - {fileID: 2800000, guid: f2f5174a41928a04e8d196f98ad01f89, type: 3}
+  - {fileID: 2800000, guid: 912213d41bfe61c48a48eb491c27c63e, type: 3}
+  - {fileID: 2800000, guid: 912213d41bfe61c48a48eb491c27c63e, type: 3}
+  - {fileID: 2800000, guid: e72db150b7370d340ad82df9e9da1d31, type: 3}
+  - {fileID: 2800000, guid: e72db150b7370d340ad82df9e9da1d31, type: 3}
+  cartas_03:
+  - {fileID: 2800000, guid: fe60d418fc5ff0c40a87152dfb7a6eed, type: 3}
+  - {fileID: 2800000, guid: fe60d418fc5ff0c40a87152dfb7a6eed, type: 3}
+  - {fileID: 2800000, guid: b05705ad936530541b9bb2d3c912607f, type: 3}
+  - {fileID: 2800000, guid: b05705ad936530541b9bb2d3c912607f, type: 3}
+  - {fileID: 2800000, guid: 6acdd72d177c3764fab80ac04f783bff, type: 3}
+  - {fileID: 2800000, guid: 6acdd72d177c3764fab80ac04f783bff, type: 3}
+  - {fileID: 2800000, guid: 235735de3409c1045b9fa263b46dc001, type: 3}
+  - {fileID: 2800000, guid: 235735de3409c1045b9fa263b46dc001, type: 3}
+  - {fileID: 2800000, guid: 5afc8e9952198094bbf69b8e90ad55ce, type: 3}
+  - {fileID: 2800000, guid: 5afc8e9952198094bbf69b8e90ad55ce, type: 3}
+  - {fileID: 2800000, guid: 2952a1853095fbb438ce8956d2362af2, type: 3}
+  - {fileID: 2800000, guid: 2952a1853095fbb438ce8956d2362af2, type: 3}
+  cartas_04:
+  - {fileID: 2800000, guid: ee31127780b244647985f78505ebd2a9, type: 3}
+  - {fileID: 2800000, guid: ee31127780b244647985f78505ebd2a9, type: 3}
+  - {fileID: 2800000, guid: 323ca29d5f02b8343be99b9614a0117b, type: 3}
+  - {fileID: 2800000, guid: 323ca29d5f02b8343be99b9614a0117b, type: 3}
+  - {fileID: 2800000, guid: 346240a0dd272644ea01a57df5fa0170, type: 3}
+  - {fileID: 2800000, guid: 346240a0dd272644ea01a57df5fa0170, type: 3}
+  - {fileID: 2800000, guid: 96b047444146b9f49a1884749dc7c1f0, type: 3}
+  - {fileID: 2800000, guid: 96b047444146b9f49a1884749dc7c1f0, type: 3}
+  - {fileID: 2800000, guid: ddcb8f888175e524dbbc856f7b167f50, type: 3}
+  - {fileID: 2800000, guid: ddcb8f888175e524dbbc856f7b167f50, type: 3}
+  - {fileID: 2800000, guid: 490ecb3bd4cbab04c82ebb878aba6b69, type: 3}
+  - {fileID: 2800000, guid: 490ecb3bd4cbab04c82ebb878aba6b69, type: 3}
+  Menu: {fileID: 1935277919}
 --- !u!1001 &317395963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -525,14 +591,14 @@ RectTransform:
   m_GameObject: {fileID: 570246222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1935277920}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -92, y: -98}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570246224
@@ -553,7 +619,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e368bca63b5527489c5c39a040eec5d, type: 3}
+  m_Sprite: {fileID: -2276259661975475453, guid: 6e368bca63b5527489c5c39a040eec5d,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -613,7 +680,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 570246224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 266877844}
+        m_MethodName: mazo_numeros
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &585208383
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,14 +814,14 @@ RectTransform:
   m_GameObject: {fileID: 594428580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1935277920}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 308, y: 63}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &594428582
@@ -764,7 +842,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5b25ccdc3192d2344a5f4e3ffdb4b2c8, type: 3}
+  m_Sprite: {fileID: 2750298860172458669, guid: 5b25ccdc3192d2344a5f4e3ffdb4b2c8,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -824,7 +903,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 594428582}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 266877844}
+        m_MethodName: mazo_figuras
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,14 +1079,14 @@ RectTransform:
   m_GameObject: {fileID: 725152571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1935277920}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 320, y: -241}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725152573
@@ -1017,8 +1107,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c9b962a333c0b048b184be3a2af82ab, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 141893073332109768, guid: 9c9b962a333c0b048b184be3a2af82ab, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1077,7 +1167,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 725152573}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 266877844}
+        m_MethodName: mazo_letras
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &726759082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1268,14 +1369,14 @@ RectTransform:
   m_GameObject: {fileID: 798899763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.3, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1935277920}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 80, y: 357}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &798899765
@@ -1296,7 +1397,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2135aedc851895943950e67625abd269, type: 3}
+  m_Sprite: {fileID: 8793915729297761979, guid: 2135aedc851895943950e67625abd269,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2408,14 +2510,14 @@ RectTransform:
   m_GameObject: {fileID: 1965302114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1935277920}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -84, y: -415}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1965302116
@@ -2436,7 +2538,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7d7bcd4cb57d8f04aa96861327aa8732, type: 3}
+  m_Sprite: {fileID: 7336298474659753992, guid: 7d7bcd4cb57d8f04aa96861327aa8732,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2496,7 +2599,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1965302116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 266877844}
+        m_MethodName: mazo_bichos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1975471561
 PrefabInstance:
   m_ObjectHideFlags: 0
