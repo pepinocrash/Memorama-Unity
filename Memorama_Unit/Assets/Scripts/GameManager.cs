@@ -11,16 +11,6 @@ public class GameManager : MonoBehaviour
     int cantidad_maxima=12;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void acomodo_tarjetas(List<Texture> cartas_sel)
     {

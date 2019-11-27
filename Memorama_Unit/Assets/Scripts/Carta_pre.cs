@@ -6,7 +6,7 @@ public class Carta_pre : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public static bool Seleccionadas = false;
+    public static bool Seleccionadas = true;
 
     public static int tarjetas_volteadas;
 
@@ -34,7 +34,7 @@ public class Carta_pre : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name == transform.name && tarjetas_volteadas <= 2)
+                if (hit.transform.name == transform.name && tarjetas_volteadas <= 2 && Seleccionadas == false)
                 {
                     tarjetas_volteadas = tarjetas_volteadas + 1;
 
@@ -110,6 +110,12 @@ public class Carta_pre : MonoBehaviour
                 }
             }
         }*/
+    }
+
+    public void Seleccion()
+    {
+
+        Seleccionadas = false;
     }
 
     public void PlayFlip()

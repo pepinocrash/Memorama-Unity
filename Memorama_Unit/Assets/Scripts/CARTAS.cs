@@ -10,7 +10,6 @@ public class CARTAS : MonoBehaviour
     public List<Texture> cartas_04;
 
     GameObject Managers;
-    public GameObject Menu;
 
 
     // Start is called before the first frame update
@@ -22,30 +21,38 @@ public class CARTAS : MonoBehaviour
     // Update is called once per frame
 
 
-    public void mazo_figuras()
+    public void mazo_figuras(GameObject fade)
     {
+        fade.GetComponent<Animator>().Play("fade_in");
+        fade.GetComponent<Animator>().StopPlayback();
         Managers.GetComponent<GameManager>().acomodo_tarjetas(cartas_01);
-        Menu.SetActive(false);
+       
     }
 
-    public void mazo_numeros()
+    public void mazo_numeros(GameObject fade)
     {
+        fade.GetComponent<Animator>().Play("fade_in");
+        fade.GetComponent<Animator>().StopPlayback();
         Managers.GetComponent<GameManager>().acomodo_tarjetas(cartas_02);
-        Menu.SetActive(false);
+       
 
     }
 
-    public void mazo_letras()
+    public void mazo_letras(GameObject fade)
     {
+        fade.GetComponent<Animator>().Play("fade_in");
+        fade.GetComponent<Animator>().StopPlayback();
         Managers.GetComponent<GameManager>().acomodo_tarjetas(cartas_03);
-        Menu.SetActive(false);
+      
 
     }
 
-    public void mazo_bichos()
+    public void mazo_bichos(GameObject fade)
     {
+        fade.GetComponent<Animator>().Play("fade_in");
+        fade.GetComponent<Animator>().StopPlayback();
         Managers.GetComponent<GameManager>().acomodo_tarjetas(cartas_04);
-        Menu.SetActive(false);
+       
 
     }
 
