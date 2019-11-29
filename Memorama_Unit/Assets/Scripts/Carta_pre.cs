@@ -28,89 +28,68 @@ public class Carta_pre : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.transform.name == transform.name && tarjetas_volteadas <= 2 && Seleccionadas == false)
-                {
-                    tarjetas_volteadas = tarjetas_volteadas + 1;
+        //if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        //{
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit))
+        //    {
+        //        if (hit.transform.name == transform.name/* && tarjetas_volteadas <= 2*/ && Seleccionadas == false)
+        //        {
+        //            tarjetas_volteadas = tarjetas_volteadas + 1;
 
-                    var card = hit.collider.GetComponent<Carta_pre>();
-                    if (card != null)
-                    {
-                        int click = card.comp.SumaClick(0);
-                        if (click <= 2)
-                        {
+        //            var card = hit.collider.GetComponent<Carta_pre>();
+        //            if (card != null)
+        //            {
+        //                int click = card.comp.SumaClick(0);
+        //                if (click <= 2)
+        //                {
 
-                            card.PlayFlip();
-                            card.comp.setCarta(gameObject);
-
-
-
-                        }
-                        if (click == 2)
-                        {
-                            Seleccionadas = true;
-                            bool equals = card.comp.CompararIguales();
-
-                            if (equals)
-                            {
-
-                                //animacion destruccion
-                                card.comp.clicks = 0;
-                                particula.GetComponent<Spawnear_Particula>().spawn_correcta();
-                                StartCoroutine(DestroyAfterTime(2));
-                                StartCoroutine(activarbool(5));
+        //                    card.PlayFlip();
+        //                    card.comp.setCarta(gameObject);
 
 
 
-                            }
-                            else
-                            {
-                                //animacion de volteo
-                                card.comp.clicks = 0;
-                                StartCoroutine(ExecuteAfterTime(2));
-                                StartCoroutine(activarbool(5));
+        //                }
+        //                if (click == 2)
+        //                {
+        //                    Seleccionadas = true;
+        //                    bool equals = card.comp.CompararIguales();
+
+        //                    if (equals)
+        //                    {
+
+        //                        //animacion destruccion
+        //                        card.comp.clicks = 0;
+        //                        particula.GetComponent<Spawnear_Particula>().spawn_correcta();
+        //                        StartCoroutine(DestroyAfterTime(2));
+        //                        StartCoroutine(activarbool(5));
 
 
 
-                            }
+        //                    }
+        //                    else
+        //                    {
+        //                        //animacion de volteo
+        //                        card.comp.clicks = 0;
+        //                        StartCoroutine(ExecuteAfterTime(2));
+        //                        StartCoroutine(activarbool(5));
 
-                        }
+
+
+        //                    }
+
+        //                }
 
 
 
-                    }
-                }
-            }
+        //            }
+        //        }
+        //    }
         }
 
 
-
-       /* if (Input.GetMouseButtonDown(0))
-        {
-            //we should only do the physics test if the mouse is down...
-            //why do an expensive raycast if it doesn't matter?
-
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
-            {
-                var card = hit.collider.GetComponent<Carta_pre>();
-                if (card != null)
-                {
-                    //we hit a card!
-                    card.comp.SumaClick(0);
-                    card.PlayFlip();
-
-                    
-                }
-            }
-        }*/
-    }
+    
 
     public void Seleccion()
     {
@@ -201,6 +180,70 @@ public class Carta_pre : MonoBehaviour
         }
 
     }
+
+    void OnTouchDown()
+    {
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.name == transform.name  && tarjetas_volteadas <= 2 && Seleccionadas == false)
+                {
+                    tarjetas_volteadas = tarjetas_volteadas + 1;
+
+                    var card = hit.collider.GetComponent<Carta_pre>();
+                    if (card != null)
+                    {
+                        int click = card.comp.SumaClick(0);
+                        if (click <= 2)
+                        {
+
+                            card.PlayFlip();
+                            card.comp.setCarta(gameObject);
+
+
+
+                        }
+                        if (click == 2)
+                        {
+                            Seleccionadas = true;
+                            bool equals = card.comp.CompararIguales();
+
+                            if (equals)
+                            {
+
+                                //animacion destruccion
+                                card.comp.clicks = 0;
+                                particula.GetComponent<Spawnear_Particula>().spawn_correcta();
+                                StartCoroutine(DestroyAfterTime(2));
+                                StartCoroutine(activarbool(5));
+
+
+
+                            }
+                            else
+                            {
+                                //animacion de volteo
+                                card.comp.clicks = 0;
+                                StartCoroutine(ExecuteAfterTime(2));
+                                StartCoroutine(activarbool(5));
+
+
+
+                            }
+
+                        }
+
+
+
+                    }
+                }
+            }
+        }
+        }
+
 
     IEnumerator ExecuteAfterTime(float time)
     {
