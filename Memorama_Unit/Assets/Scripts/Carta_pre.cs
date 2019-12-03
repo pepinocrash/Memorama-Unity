@@ -161,7 +161,6 @@ public class Carta_pre : MonoBehaviour
                            
                             //animacion destruccion
                             card.comp.clicks = 0;
-                            particula.GetComponent<Spawnear_Particula>().spawn_correcta();
                             StartCoroutine(DestroyAfterTime(2));
                             StartCoroutine(activarbool(5));
 
@@ -268,6 +267,7 @@ public class Carta_pre : MonoBehaviour
     IEnumerator DestroyAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
+        particula.GetComponent<Spawnear_Particula>().spawn_correcta();
         Destroy(comp.cartas01);
         Destroy(comp.cartas02);
         comp.cartas01 = null;
