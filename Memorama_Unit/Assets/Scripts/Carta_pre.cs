@@ -15,7 +15,10 @@ public class Carta_pre : MonoBehaviour
 
     GameObject particula;
 
+    public AudioSource voltear;
+
     public Animator anim;
+   
 
     void Start()
     {
@@ -23,6 +26,8 @@ public class Carta_pre : MonoBehaviour
         go = GameObject.Find("Manager");
         particula = GameObject.Find("Particula");
         comp = (Comparacion)go.GetComponent(typeof(Comparacion));
+        voltear = this.GetComponent<AudioSource>();
+        voltear.clip = go.GetComponent<GameManager>().pick; 
     }
 
     // Update is called once per frame
@@ -99,6 +104,7 @@ public class Carta_pre : MonoBehaviour
 
     public void PlayFlip()
     {
+        voltear.Play();
         anim.gameObject.GetComponent<Animator>().Rebind();
         anim.SetFloat("carta_voltear", 1);
         anim.gameObject.GetComponent<Animator>().Play("cartar_voltear");

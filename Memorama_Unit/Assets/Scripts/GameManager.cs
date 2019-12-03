@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     int cantidad_maxima=12;
 
+    public AudioClip pick;
+
     // Start is called before the first frame update
 
     public void acomodo_tarjetas(List<Texture> cartas_sel)
