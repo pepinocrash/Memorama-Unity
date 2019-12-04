@@ -8,7 +8,7 @@ public class CARTAS : MonoBehaviour
     public List<Texture> cartas_02;
     public List<Texture> cartas_03;
     public List<Texture> cartas_04;
-    GameObject TextPares;
+    public GameObject SongManager;
     GameObject Managers;
 
 
@@ -16,7 +16,7 @@ public class CARTAS : MonoBehaviour
     void Start()
     {
         Managers = GameObject.Find("Manager");
-        TextPares = GameObject.FindWithTag("TextoPares");
+        
     }
 
     // Update is called once per frame
@@ -27,7 +27,8 @@ public class CARTAS : MonoBehaviour
         fade.GetComponent<Animator>().Play("fade_in");
         fade.GetComponent<Animator>().StopPlayback();
         Managers.GetComponent<GameManager>().acomodo_tarjetas(cartas_01);
-       
+        changeMusic();
+
     }
 
     public void mazo_numeros(GameObject fade)
@@ -35,7 +36,7 @@ public class CARTAS : MonoBehaviour
         fade.GetComponent<Animator>().Play("fade_in");
         fade.GetComponent<Animator>().StopPlayback();
         Managers.GetComponent<GameManager>().acomodo_tarjetas(cartas_02);
-       
+        changeMusic();
 
     }
 
@@ -44,7 +45,7 @@ public class CARTAS : MonoBehaviour
         fade.GetComponent<Animator>().Play("fade_in");
         fade.GetComponent<Animator>().StopPlayback();
         Managers.GetComponent<GameManager>().acomodo_tarjetas(cartas_03);
-      
+        changeMusic();
 
     }
 
@@ -53,18 +54,22 @@ public class CARTAS : MonoBehaviour
         fade.GetComponent<Animator>().Play("fade_in");
         fade.GetComponent<Animator>().StopPlayback();
         Managers.GetComponent<GameManager>().acomodo_tarjetas(cartas_04);
-       
+        changeMusic();
 
     }
 
-    public void ShowStats()
-    {
-        TextPares.SetActive(true);
-    }
+   
 
     public void RestartLevel()
     {
         Application.LoadLevel("main");
+    }
+
+    void changeMusic()
+    {
+        AudioSource[] Audio = SongManager.GetComponents<AudioSource>();
+        Audio[0].Stop();
+        Audio[1].Play();
     }
 
 }
