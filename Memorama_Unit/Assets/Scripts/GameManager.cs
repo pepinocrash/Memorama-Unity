@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     int cantidad_maxima=12;
 
     public AudioClip pick;
+    public AudioClip win;
+    public AudioClip lose;
 
     // Start is called before the first frame update
 

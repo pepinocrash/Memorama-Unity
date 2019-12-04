@@ -104,6 +104,7 @@ public class Carta_pre : MonoBehaviour
 
     public void PlayFlip()
     {
+        voltear.clip = go.GetComponent<GameManager>().pick;
         voltear.Play();
         anim.gameObject.GetComponent<Animator>().Rebind();
         anim.SetFloat("carta_voltear", 1);
@@ -221,7 +222,7 @@ public class Carta_pre : MonoBehaviour
 
                                 //animacion destruccion
                                 card.comp.clicks = 0;
-                                particula.GetComponent<Spawnear_Particula>().spawn_correcta();
+                                //particula.GetComponent<Spawnear_Particula>().spawn_correcta();
                                 StartCoroutine(DestroyAfterTime(2));
                                 StartCoroutine(activarbool(5));
 
@@ -253,7 +254,8 @@ public class Carta_pre : MonoBehaviour
     IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
-
+        voltear.clip = go.GetComponent<GameManager>().lose;
+        voltear.Play();
         particula.GetComponent<Spawnear_Particula>().spawn_incorrecta();
 
         comp.cartas01 = null;
@@ -267,6 +269,8 @@ public class Carta_pre : MonoBehaviour
     IEnumerator DestroyAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
+        voltear.clip = go.GetComponent<GameManager>().win;
+        voltear.Play();
         particula.GetComponent<Spawnear_Particula>().spawn_correcta();
         Destroy(comp.cartas01);
         Destroy(comp.cartas02);
