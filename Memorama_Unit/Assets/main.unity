@@ -498,7 +498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &184738879
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2006,7 +2006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectColor: {r: 0, g: 0.1254902, b: 0.39607847, a: 1}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &863297279
@@ -2022,7 +2022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.47450984, b: 0.9921569, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2030,7 +2030,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: d9a66aaa3dfaa504aa362376b89bca57, type: 3}
     m_FontSize: 60
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
@@ -2199,9 +2199,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carta_scene: []
-  pick: {fileID: 8300000, guid: 798bb6055c4f59f47b630495a6930b45, type: 3}
-  win: {fileID: 0}
-  lose: {fileID: 0}
+  pick: {fileID: 8300000, guid: 5a1fdf8adbf43de4588f78d54a7f4d90, type: 3}
+  fin: {fileID: 8300000, guid: 80746efa7cff68743ba2d3e95895e9cb, type: 3}
+  win: {fileID: 8300000, guid: 2204e12b496b0e04fb4b9b7db97f8c49, type: 3}
+  lose: {fileID: 8300000, guid: c3b56dc40d417ce4681836177dbbbb10, type: 3}
 --- !u!114 &985036858
 MonoBehaviour:
   m_ObjectHideFlags: 0

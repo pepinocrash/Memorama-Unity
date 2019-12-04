@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     int cantidad_maxima=12;
 
     public AudioClip pick;
+    public AudioClip fin;
     public AudioClip win;
     public AudioClip lose;
 

@@ -12,6 +12,7 @@ public class Carta_pre : MonoBehaviour
     public static int tarjetas_volteadas;
 
     public static int pares = 0;
+    public static int fallos = 0;
     public Text canvasPares;
 
     GameObject go;
@@ -20,6 +21,7 @@ public class Carta_pre : MonoBehaviour
     GameObject particula;
 
     public AudioSource voltear;
+    public AudioSource Finish;
 
     public Animator anim;
    
@@ -31,7 +33,9 @@ public class Carta_pre : MonoBehaviour
         particula = GameObject.Find("Particula");
         comp = (Comparacion)go.GetComponent(typeof(Comparacion));
         voltear = this.GetComponent<AudioSource>();
+        Finish = this.GetComponent<AudioSource>();
         voltear.clip = go.GetComponent<GameManager>().pick; 
+        Finish.clip = go.GetComponent<GameManager>().fin; 
     }
 
     // Update is called once per frame
@@ -190,7 +194,11 @@ public class Carta_pre : MonoBehaviour
                             pares++;
                             canvasPares.text = pares + "/6";
 
-
+                            if (pares >= 6)
+                            {
+                                //Reproducir sonido de victoria y poner imagen de estrellas
+                                Finish.Play();
+                            }
 
 
                         }
@@ -253,6 +261,11 @@ public class Carta_pre : MonoBehaviour
                                 StartCoroutine(activarbool(5));
                                 pares++;
                                 canvasPares.text = pares + "/6";
+                                if (pares>=6)
+                                {
+                                    //Reproducir sonido de victoria y poner imagen de estrellas
+                                    Finish.Play();
+                                }
 
 
 
@@ -260,6 +273,7 @@ public class Carta_pre : MonoBehaviour
                             else
                             {
                                 //animacion de volteo
+                                fallos++;
                                 card.comp.clicks = 0;
                                 StartCoroutine(ExecuteAfterTime(2));
                                 StartCoroutine(activarbool(5));

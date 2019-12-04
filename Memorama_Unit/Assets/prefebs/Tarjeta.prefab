@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4eed44262f67246b801cf4cb3435fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasPares: {fileID: 0}
   voltear: {fileID: 0}
   anim: {fileID: 0}
 --- !u!65 &1996871735995955499
@@ -140,7 +141,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.307
   m_Pitch: 1
   Loop: 0
   Mute: 0
