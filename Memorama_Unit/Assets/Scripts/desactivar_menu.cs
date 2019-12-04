@@ -38,4 +38,9 @@ public class desactivar_menu : MonoBehaviour
     {
         TextPares.SetActive(true);
     }
+
+    public void RestartLevel()
+    {
+        Application.LoadLevel("main");
+    }
 }

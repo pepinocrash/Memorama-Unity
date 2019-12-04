@@ -60,9 +60,10 @@ public class CARTAS : MonoBehaviour
 
    
 
-    public void RestartLevel()
+    public void RestartLevel(GameObject fade)
     {
-        Application.LoadLevel("main");
+        fade.GetComponent<Animator>().Play("regresar_menu");
+        fade.GetComponent<Animator>().StopPlayback();
     }
 
     void changeMusic()
