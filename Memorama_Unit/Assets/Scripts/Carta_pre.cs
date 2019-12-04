@@ -148,10 +148,11 @@ public class Carta_pre : MonoBehaviour
 
     public void destruir()
     {
-        Destroy(comp.cartas01);
-        Destroy(comp.cartas02);
+        Destroy(comp.cartas01.transform.parent);
+        Destroy(comp.cartas02.transform.parent);
         comp.cartas01 = null;
         comp.cartas02 = null;
+        Seleccionadas = false;
     }
 
     void OnMouseDown()
@@ -320,7 +321,7 @@ public class Carta_pre : MonoBehaviour
         //comp.cartas01 = null;
         //comp.cartas02 = null;
 
-        Seleccionadas = false;
+        //Seleccionadas = false;
 
 
 
