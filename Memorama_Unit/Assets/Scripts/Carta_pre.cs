@@ -131,6 +131,25 @@ public class Carta_pre : MonoBehaviour
 
     }
 
+    public void ocultar()
+    {
+        //anim.gameObject.GetComponent<Animator>().Rebind();
+        comp.cartas01.gameObject.GetComponent<Animator>().Play("adios_tarjeta");
+        comp.cartas01.gameObject.GetComponent<Animator>().StopPlayback();
+        comp.cartas02.gameObject.GetComponent<Animator>().Play("adios_tarjeta");
+        comp.cartas02.gameObject.GetComponent<Animator>().StopPlayback();
+
+
+    }
+
+    public void destruir()
+    {
+        Destroy(comp.cartas01);
+        Destroy(comp.cartas02);
+        comp.cartas01 = null;
+        comp.cartas02 = null;
+    }
+
     void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0) && Seleccionadas==false)
@@ -281,10 +300,11 @@ public class Carta_pre : MonoBehaviour
         voltear.clip = go.GetComponent<GameManager>().win;
         voltear.Play();
         particula.GetComponent<Spawnear_Particula>().spawn_correcta();
-        Destroy(comp.cartas01);
-        Destroy(comp.cartas02);
-        comp.cartas01 = null;
-        comp.cartas02 = null;
+        ocultar();
+        //Destroy(comp.cartas01);
+        //Destroy(comp.cartas02);
+        //comp.cartas01 = null;
+        //comp.cartas02 = null;
 
         Seleccionadas = false;
 
