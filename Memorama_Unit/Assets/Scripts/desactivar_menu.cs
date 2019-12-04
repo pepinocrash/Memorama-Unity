@@ -8,13 +8,14 @@ public class desactivar_menu : MonoBehaviour
     public GameObject Menu;
     public GameObject[] carta_scene;
     public GameObject cameraScene;
-    
+    GameObject TextPares;
     void Start()
     {
 
         carta_scene = GameObject.FindGameObjectsWithTag("carta");
         cameraScene = GameObject.FindWithTag("MainCamera");
-        
+        TextPares = GameObject.FindWithTag("TextoPares");
+
 
     }
 
@@ -33,5 +34,8 @@ public class desactivar_menu : MonoBehaviour
 
     }
 
-    
+    public void ShowStats()
+    {
+        TextPares.SetActive(true);
+    }
 }
