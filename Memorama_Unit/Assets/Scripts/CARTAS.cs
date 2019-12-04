@@ -8,7 +8,7 @@ public class CARTAS : MonoBehaviour
     public List<Texture> cartas_02;
     public List<Texture> cartas_03;
     public List<Texture> cartas_04;
-
+    GameObject TextPares;
     GameObject Managers;
 
 
@@ -16,6 +16,7 @@ public class CARTAS : MonoBehaviour
     void Start()
     {
         Managers = GameObject.Find("Manager");
+        TextPares = GameObject.FindWithTag("TextoPares");
     }
 
     // Update is called once per frame
@@ -54,6 +55,16 @@ public class CARTAS : MonoBehaviour
         Managers.GetComponent<GameManager>().acomodo_tarjetas(cartas_04);
        
 
+    }
+
+    public void ShowStats()
+    {
+        TextPares.SetActive(true);
+    }
+
+    public void RestartLevel()
+    {
+        Application.LoadLevel("main");
     }
 
 }

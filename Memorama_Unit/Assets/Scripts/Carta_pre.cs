@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Carta_pre : MonoBehaviour
@@ -9,6 +10,9 @@ public class Carta_pre : MonoBehaviour
     public static bool Seleccionadas = true;
 
     public static int tarjetas_volteadas;
+
+    public static int pares = 0;
+    public Text canvasPares;
 
     GameObject go;
     Comparacion comp;
@@ -164,6 +168,9 @@ public class Carta_pre : MonoBehaviour
                             card.comp.clicks = 0;
                             StartCoroutine(DestroyAfterTime(2));
                             StartCoroutine(activarbool(5));
+                            pares++;
+                            canvasPares.text = pares + "/6";
+
 
 
 
@@ -225,6 +232,8 @@ public class Carta_pre : MonoBehaviour
                                 //particula.GetComponent<Spawnear_Particula>().spawn_correcta();
                                 StartCoroutine(DestroyAfterTime(2));
                                 StartCoroutine(activarbool(5));
+                                pares++;
+                                canvasPares.text = pares + "/6";
 
 
 
