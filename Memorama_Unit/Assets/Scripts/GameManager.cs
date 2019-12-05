@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
     public AudioClip fin;
     public AudioClip win;
     public AudioClip lose;
+    public Sprite []Images;
+    public GameObject StarImage;
+
 
     // Start is called before the first frame update
 

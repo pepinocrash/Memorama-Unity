@@ -24,7 +24,9 @@ public class Carta_pre : MonoBehaviour
     public AudioSource Finish;
 
     public Animator anim;
-   
+    Sprite[] ImagesSprites;
+    GameObject StarImage;
+
 
     void Start()
     {
@@ -35,7 +37,9 @@ public class Carta_pre : MonoBehaviour
         voltear = this.GetComponent<AudioSource>();
         Finish = this.GetComponent<AudioSource>();
         voltear.clip = go.GetComponent<GameManager>().pick; 
-        Finish.clip = go.GetComponent<GameManager>().fin; 
+        Finish.clip = go.GetComponent<GameManager>().fin;
+        ImagesSprites = go.GetComponent<GameManager>().Images;
+        StarImage = go.GetComponent<GameManager>().StarImage;
     }
 
     // Update is called once per frame
@@ -118,7 +122,8 @@ public class Carta_pre : MonoBehaviour
         anim.SetFloat("carta_voltear", 1);
         anim.gameObject.GetComponent<Animator>().Play("cartar_voltear");
         anim.gameObject.GetComponent<Animator>().StopPlayback();
-        
+       
+
 
     }
 
@@ -199,6 +204,21 @@ public class Carta_pre : MonoBehaviour
                             {
                                 //Reproducir sonido de victoria y poner imagen de estrellas
                                 Finish.Play();
+                                StarImage.SetActive(true);
+
+                                if (fallos < 2)
+                                {
+                                    StarImage.GetComponent <Image>().sprite= ImagesSprites[0];
+                                }
+                                else if (fallos < 5)
+                                {
+                                    StarImage.GetComponent<Image>().sprite = ImagesSprites[1];
+                                }
+                                else
+                                {
+                                    StarImage.GetComponent<Image>().sprite = ImagesSprites[2];
+                                }
+                                
                             }
 
 
@@ -206,6 +226,7 @@ public class Carta_pre : MonoBehaviour
                         else
                         {
                             //animacion de volteo
+                            fallos++;
                             card.comp.clicks = 0;
                             StartCoroutine(ExecuteAfterTime(2));
                             StartCoroutine(activarbool(5));
@@ -264,8 +285,22 @@ public class Carta_pre : MonoBehaviour
                                 canvasPares.text = pares + "/6";
                                 if (pares>=6)
                                 {
-                                    //Reproducir sonido de victoria y poner imagen de estrellas
+                                    // Reproducir sonido de victoria y poner imagen de estrellas
                                     Finish.Play();
+                                    StarImage.SetActive(true);
+
+                                    if (fallos < 2)
+                                    {
+                                        StarImage.GetComponent<Image>().sprite = ImagesSprites[0];
+                                    }
+                                    else if (fallos < 5)
+                                    {
+                                        StarImage.GetComponent<Image>().sprite = ImagesSprites[1];
+                                    }
+                                    else
+                                    {
+                                        StarImage.GetComponent<Image>().sprite = ImagesSprites[2];
+                                    }
                                 }
 
 
