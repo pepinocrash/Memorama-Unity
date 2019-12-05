@@ -153,8 +153,8 @@ public class Carta_pre : MonoBehaviour
 
     public void destruir()
     {
-        Destroy(comp.cartas01.transform.parent);
-        Destroy(comp.cartas02.transform.parent);
+        Destroy(comp.cartas01);
+        Destroy(comp.cartas02);
         comp.cartas01 = null;
         comp.cartas02 = null;
         Seleccionadas = false;
