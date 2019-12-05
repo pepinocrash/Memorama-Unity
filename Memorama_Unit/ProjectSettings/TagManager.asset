@@ -6,6 +6,7 @@ TagManager:
   tags:
   - carta
   - TextoPares
+  - FinalImage
   layers:
   - Default
   - TransparentFX

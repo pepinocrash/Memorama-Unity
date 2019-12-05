@@ -35,9 +35,9 @@ public class Carta_pre : MonoBehaviour
         particula = GameObject.Find("Particula");
         comp = (Comparacion)go.GetComponent(typeof(Comparacion));
         voltear = this.GetComponent<AudioSource>();
-        Finish = this.GetComponent<AudioSource>();
+        Finish = go.GetComponent<AudioSource>();
         voltear.clip = go.GetComponent<GameManager>().pick; 
-        Finish.clip = go.GetComponent<GameManager>().fin;
+       // Finish.clip = go.GetComponent<GameManager>().fin;
         ImagesSprites = go.GetComponent<GameManager>().Images;
         StarImage = go.GetComponent<GameManager>().StarImage;
     }
@@ -204,13 +204,14 @@ public class Carta_pre : MonoBehaviour
                             {
                                 //Reproducir sonido de victoria y poner imagen de estrellas
                                 Finish.Play();
+
                                 StarImage.SetActive(true);
 
-                                if (fallos < 2)
+                                if (fallos < 4)
                                 {
                                     StarImage.GetComponent <Image>().sprite= ImagesSprites[0];
                                 }
-                                else if (fallos < 5)
+                                else if (fallos < 6)
                                 {
                                     StarImage.GetComponent<Image>().sprite = ImagesSprites[1];
                                 }
@@ -287,13 +288,14 @@ public class Carta_pre : MonoBehaviour
                                 {
                                     // Reproducir sonido de victoria y poner imagen de estrellas
                                     Finish.Play();
+                                   
                                     StarImage.SetActive(true);
 
-                                    if (fallos < 2)
+                                    if (fallos < 4)
                                     {
                                         StarImage.GetComponent<Image>().sprite = ImagesSprites[0];
                                     }
-                                    else if (fallos < 5)
+                                    else if (fallos < 6)
                                     {
                                         StarImage.GetComponent<Image>().sprite = ImagesSprites[1];
                                     }
