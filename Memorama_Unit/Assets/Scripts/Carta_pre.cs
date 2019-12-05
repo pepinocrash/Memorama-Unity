@@ -219,6 +219,9 @@ public class Carta_pre : MonoBehaviour
                                 {
                                     StarImage.GetComponent<Image>().sprite = ImagesSprites[2];
                                 }
+
+                                pares = 0;
+                                fallos = 0;
                                 
                             }
 
@@ -303,6 +306,9 @@ public class Carta_pre : MonoBehaviour
                                     {
                                         StarImage.GetComponent<Image>().sprite = ImagesSprites[2];
                                     }
+
+                                    pares = 0;
+                                    fallos = 0;
                                 }
 
 
